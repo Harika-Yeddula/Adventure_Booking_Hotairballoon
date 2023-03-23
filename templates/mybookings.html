@@ -1,0 +1,36 @@
+  {% extends 'basic.html' %}
+{% load static %}
+    {% block title %}Above the Cloud rides
+    {% endblock title %}
+{% block css %}
+     <link rel="stylesheet" type="text/css" href="{% static '/mybookings.css' %}" >
+{% endblock css %}
+
+    {% block body %}
+
+    {% for each_booking in booking_list %}
+         <div class="list-group" style="width: 1000px;margin-left: 190px!important;margin-top: 30px!important;">
+            <a href="/editbooking/{{each_booking.id}}" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+             <h5 class="mb-1">{{each_booking.location}}</h5>
+             </div>
+                <small>No of persons: {{each_booking.no_of_persons}}</small><br>
+                <small>Adventure date: {{each_booking.booking_for_the_date}}</small><br>
+                <small>View: {{each_booking.view}}</small><br>
+                <small>Booked on: {{each_booking.created_at }}</small>
+           </a>
+         </div>
+        </div>
+        </div>
+        <div style="margin-left: 1050px;margin-top: 5px">
+            <a href="/deletebooking/{{each_booking.id}}">
+                <button class="btn btn-outline-info" type="submit">
+                Cancel booking
+                </button>
+            </a>
+        </div>
+    {% endfor %}
+
+
+
+ {% endblock body %}

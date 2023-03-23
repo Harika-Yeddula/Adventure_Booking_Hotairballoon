@@ -1,0 +1,44 @@
+input{
+    background-color: transparent !important;
+    border:none !important;
+    border-bottom:1px solid #ffffff !important;
+    outline: none !important;
+    color: #ffffff !important;
+}
+
+label{
+    color:#ffffff !important;
+    margin:0px !important;
+    padding:0px !important;
+    font-size: 25px;
+    font-family: Cambay Devanagari;
+}
+
+h3 {
+    text-align: center;
+    font-family: Bradley Hand !important;
+    font-size: 40px !important;
+    margin-left: 135px;
+    margin-top: 20px;
+    color:#ffffff !important;
+}
+
+
+.bg-image{
+    background-image: url('https://media.istockphoto.com/id/1309631741/photo/hot-air-balloons-flying-over-the-botan-canyon-in-turkey.jpg?b=1&s=170667a&w=0&k=20&c=2EjPA7CXUFaC-rL0RGUyHKAXTIPN_0e5_wTHU6wtQrs=') !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height: 800px !important;
+}
+
+.container{
+   position: absolute !important;
+    top:50% !important;
+    left:50% !important;
+    transform: translate(-50%,-50%) !important;
+    width:400px !important;
+    height:600px !important;
+    box-sizing: border-box !important;
+    background-color: rgba(0,0,0,0.5) !important;
+}

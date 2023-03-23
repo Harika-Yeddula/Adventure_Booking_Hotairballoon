@@ -1,0 +1,45 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '/userlogin.css' %}" >
+{% endblock css %}
+{% block title %}login
+{% endblock title %}
+{% block body %}
+    <div class="bg-image">
+        <div class="container">
+        <div class="row">
+            <h3>Login</h3>
+            <div class="col-md-12 col-lg-12 col-xlg-12 col-sm-12">
+                <form action="/userlogin/"  method="post">
+                    {%csrf_token%}
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" >Email:</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd" >Password:</label>
+                        <input type="password" class="form-control"  id="pwd" placeholder="Enter password" name="pswd">
+                    </div>
+                    <button type="submit" class="btn btn-block btn-outline-info" style="margin-top: 30px;font-size: 25px;font-family: Cambay Devanagari;">Login</button>
+                </form>
+                <div>
+                    <p  style="color:#ffffff;margin-top:20px;font-family: Cambay Devanagari;font-size: 25px;">Don't have an account?
+                        <a style="color:#ffffff;font-family: Cambay Devanagari;font-size: 25px;" href="/usersignup" >Sign Up</a>
+                    </p>
+                    <p>
+                        <a style="color:#ffffff;margin-top:20px;font-family: Cambay Devanagari;font-size: 25px;" href="/reset_password" >Forgot password</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<div>
+    </div>
+    </div>
+    <!--Cards ends here-->
+{% endblock body %}

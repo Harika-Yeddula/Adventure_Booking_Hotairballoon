@@ -1,0 +1,37 @@
+{% extends 'basic.html' %}
+    {% block title %}Above the Cloud rides
+    {% endblock title %}
+    {% block body %}
+        <div>
+        <div style="margin: 10px">
+        <h2 style="text-align: center;color: indigo;font-family: 'Bradley Hand'">Adventure is calling!!</h2>
+            <h3 style="text-align: center;color: plum;font-family: 'Cambay Devanagari'">Destinations in {{ location_selected }} that one should definitely visit</h3>
+        </div>
+         <div class="container-fluid px-0" style="border:20px">
+            {% for loc in loc_list %}
+                <div class="p-5 text-center bg-image rounded-3" style="
+    background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
+    height: 400px;
+    background-repeat: no-repeat;
+     background-size: cover;
+     margin: 20px;
+  ">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.3); height: 250px">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div>
+        <h1 class="mb-3" style="color: whitesmoke;font-family: 'Bradley Hand'">{{ loc }}</h1>
+        <h4 class="mb-3" style="color: lightskyblue;font-family: 'Cambay Devanagari'">{{ loc.Description }}</h4>
+          <form action="../booking/" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="ap_location" value={{ loc }}>
+              <button type="submit" class="btn btn-outline-info">Book Now!!</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+            {% endfor %}
+    </div>
+
+        </div>
+ {% endblock body %}

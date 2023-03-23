@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}
+    {% endblock title %}
+    </title>
+
+    <!--Cdn links for bootstrap-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3156/3156918.png" type="image/gif" sizes="16x16">
+     <link rel="stylesheet" type="text/css" href="{% static '/basic.css' %}" >
+    {% block css %}
+    {% endblock css %}
+    <!--Header Section starts here-->
+
+    <div class="container-fluid px-0 bg-light">
+        <nav class="navbar navbar-expand-lg shadow-5-strong">
+            <a class="navbar-brand"  id="abovethecloudsbtn" style="font-family: 'Cambay Devanagari';font-size: 25px" href="/">Above the Clouds</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item active">
+                        <a class="nav-link"  id="homebtn" style="font-family: 'Cambay Devanagari';font-size: 25px" href="/"> Home</a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" style="font-family: 'Cambay Devanagari';font-size: 25px" id="aboutbtn" href="#About-us">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" style="font-family: 'Cambay Devanagari';font-size: 25px" id="contactbtn" href="#Contact-us">Contact </a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" style="font-family: 'Cambay Devanagari';font-size: 25px" id="mybookingsbtn" href="/mybookings">My Bookings </a>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% if user.is_authenticated %}
+                      <button class="btn btn-group bg-light" style="font-family: 'Cambay Devanagari';font-size: 25px" id="login" data-toggle="modal" data-target="#forlogin">
+                       Hello, {{request.user}} !
+                            </button>
+                       <a href="/logout" class="nav-link">
+                    <button class="btn btn-group"  style="font-family: 'Cambay Devanagari';font-size: 25px" data-toggle="modal" id="logoutbtn">
+                        Logout
+                    </button></a>&nbsp; &nbsp;
+
+                {% else %}
+
+                    <a href="/userlogin" class="nav-link">
+                    <button class="btn btn-group" id="loginbtn" style="font-family: 'Cambay Devanagari';font-size: 25px" data-toggle="modal" data-target="#forlogin">
+                        Login
+                    </button></a>
+                    <a href="/usersignup" class="nav-link">
+                    <button class="btn btn-group" id="signupbtn" style="font-family: 'Cambay Devanagari';font-size: 25px" data-toggle="modal" data-target="#forsignup">
+                        Signup
+                    </button></a>
+                {% endif %}
+
+
+            </div>
+        </nav>
+    </div>
+    <!--Header Section Ends here-->
+</head>
+
+    {% block body %}
+    {% endblock body %}
+
+
+{% block js %}
+{% endblock js %}
+</html>

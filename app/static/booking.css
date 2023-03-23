@@ -1,0 +1,50 @@
+
+label {
+    margin-top:10px;
+    color: #ffffff;
+     margin-right: 130px;
+    font-family: 'Cambay Devanagari';
+    font-size: 25px;
+}
+
+input{
+    background-color: transparent;
+    border:none;
+    border-bottom:1px solid #ffffff;
+    outline: none;
+    color:#ffffff;
+}
+
+select{
+    background-color: transparent;
+    border:none;
+    border-bottom:1px solid #ffffff;
+    outline: none;
+    color:#ffffff;
+}
+
+.bg-image{
+    background-image: url('https://cloudfront-us-east-1.images.arcpublishing.com/tbt/MT7TJDIWRVD4DJCOCKBKZXED7U.JPG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+
+.container{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:500px;
+    height:600px;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.5);
+}
+
+h3{
+    color: #ffffff;
+    margin-left:30px;
+    margin-top:30px;
+    font-family: 'Bradley Hand';
+}

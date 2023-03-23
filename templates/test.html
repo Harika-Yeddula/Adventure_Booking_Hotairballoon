@@ -1,0 +1,10 @@
+ {% extends 'basic.html' %}
+{% load static %}
+    {% block title %}Testing
+    {% endblock title %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '/test.css' %}" >
+    {% endblock css %}
+    {% block body %}
+        <h1>Css testing</h1>
+{% endblock %}
